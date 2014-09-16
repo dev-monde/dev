@@ -1,18 +1,33 @@
 {
-    "name": "zendframework/skeleton-application",
-    "description": "Skeleton Application for ZF2",
-    "license": "BSD-3-Clause",
-    "keywords": [
-        "framework",
-        "zf2"
-    ],
-    "homepage": "http://framework.zend.com/",
-    "require": {
-        "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*",
-        "zendframework/zend-developer-tools": "dev-master",
-        "doctrine/orm" : "2.*",
-        "doctrine/doctrine-orm-module": "0.*",
-        "symfony/yaml": "dev-master",
-    }
+    "name": "vendor_name/package_name",
+    "description": "description_text",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "author's name",
+            "email": "email@example.com"
+        }
+    ]
 }
+
+//Previous version commented by IDE
+//{
+//    "name": "zendframework/skeleton-application",
+//    "description": "Skeleton Application for ZF2",
+//    "license": "BSD-3-Clause",
+//    "keywords": [
+//        "framework",
+//        "zf2"
+//    ],
+//    "homepage": "http://framework.zend.com/",
+//    "require": {
+//        "php": ">=5.3.3",
+//        "zendframework/zendframework": "2.*",
+//        "zendframework/zend-developer-tools": "dev-master",
+//        "doctrine/orm" : "2.*",
+//        "doctrine/doctrine-orm-module": "0.*",
+//        "symfony/yaml": "dev-master",
+//        "zendframework/zend-form": "dev-master",
+//        "zendframework/zftool": "dev-master"
+//    }
+//}
