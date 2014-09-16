@@ -1,49 +1,28 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
 
-namespace Application\Controller;
+namespace Test\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Entity\User;
-
-class IndexController extends AbstractActionController
+class TestController extends AbstractActionController
 {
-   /* public function indexAction()
-    {
-        $objectManager = $this
-            ->getServiceLocator()
-            ->get('Doctrine\ORM\EntityManager');
 
-        $user = new User();
-        $user->setName('Some great developer ');
-
-        $objectManager->persist($user);
-        $objectManager->flush();
-
-        die('Hello there '.$user->getId());
-        return new ViewModel();
-    }*/
-	protected $_objectManager;
+     protected $_objectManager;
 
     public function indexAction()
     {
         $users = $this->getObjectManager()->getRepository('\Application\Entity\User')->findAll();
-
+		
         return new ViewModel(array('users' => $users));
     }
 
     public function addAction()
     {
+		
         if ($this->request->isPost()) {
             $user = new User();
-            $user->setFullName($this->getRequest()->getPost('fullname'));
+            $user->setName($this->getRequest()->getPost('fullname'));
 
             $this->getObjectManager()->persist($user);
             $this->getObjectManager()->flush();
@@ -60,7 +39,7 @@ class IndexController extends AbstractActionController
         $user = $this->getObjectManager()->find('\Application\Entity\User', $id);
 
         if ($this->request->isPost()) {
-            $user->setFullName($this->getRequest()->getPost('fullname'));
+            $user->setName($this->getRequest()->getPost('fullname'));
 
             $this->getObjectManager()->persist($user);
             $this->getObjectManager()->flush();
@@ -95,4 +74,7 @@ class IndexController extends AbstractActionController
         return $this->_objectManager;
     }
 
+
+
 }
+
